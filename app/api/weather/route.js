@@ -15,9 +15,9 @@ export const GET = async (request) => {
         if(address){
             // urll =`https://api.openweathermap.org/data/2.5/weather?q=${address}&APPID=${apikey}`;
             // urll="https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=87d06811494fb6dd80dc2ddaba63fdbe";
-            urll =`https://api.openweathermap.org/data/2.5/weather?q=${address}&APPID=87d06811494fb6dd80dc2ddaba63fdbe`;
+            urll =`https://api.openweathermap.org/data/2.5/weather?q=${address}&APPID=${apikey}`;
         } else{
-            urll =`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=87d06811494fb6dd80dc2ddaba63fdbe`;
+            urll =`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=${apikey}`;
         }
     
         const res = await fetch(urll);
