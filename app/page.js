@@ -74,6 +74,8 @@ export default function Home() {
       },(error) => {
         console.log(error);
       })
+    } else{
+      fetchData('lagos')
     }
   }, []);
 
