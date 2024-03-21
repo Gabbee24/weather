@@ -64,15 +64,15 @@ export default function Home() {
   }
 
   useEffect(() => {
-    fetchData("lagos");
-    // if("geolocation" in navigator){
-    //   navigator.geolocation.getCurrentPosition((position) => {
-    //     const {latitude, longitude} = position.coords;
-    //     fetchDataByCoordinates(latitude,longitude);
-    //   },(error) => {
-    //     console.log(error);
-    //   })
-    // }
+    // fetchData("lahore");
+    if("geolocation" in navigator){
+      navigator.geolocation.getCurrentPosition((position) => {
+        const {latitude, longitude} = position.coords;
+        fetchDataByCoordinates(latitude,longitude);
+      },(error) => {
+        console.log(error);
+      })
+    }
   }, []);
 
   const handleSubmit = async (e) => {
