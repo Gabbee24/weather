@@ -64,17 +64,15 @@ export default function Home() {
   }
 
   useEffect(() => {
-    // fetchData("lahore");
-    if("geolocation" in navigator){
-      navigator.geolocation.getCurrentPosition((position) => {
-        const {latitude, longitude} = position.coords;
-        fetchDataByCoordinates(latitude,longitude);
-      },(error) => {
-        console.log(error);
-      })
-    }else{
-      fetchData("london")
-    }
+    fetchData("lagos");
+    // if("geolocation" in navigator){
+    //   navigator.geolocation.getCurrentPosition((position) => {
+    //     const {latitude, longitude} = position.coords;
+    //     fetchDataByCoordinates(latitude,longitude);
+    //   },(error) => {
+    //     console.log(error);
+    //   })
+    // }
   }, []);
 
   const handleSubmit = async (e) => {
@@ -88,7 +86,7 @@ export default function Home() {
     <div className="flex justify-between items-center p-3 min-h-screen" >
 
       {/* <h1>{weatherdata?.name}</h1> */}
-      <div className="p-9 mx-auto h-[30rem] md:w-96 bg-gradient-to-b from-green-500 to-[#442bb2] cursor-pointer rounded-xl shadow-2xl " >
+      <div className="p-9 mx-auto h-[30rem] max-w-screen md:w-96 bg-gradient-to-b from-green-500 to-[#442bb2] cursor-pointer rounded-xl shadow-2xl " >
 
         <form onSubmit={handleSubmit} className="flex-col flex justify-center my-8 items-center" >
           <span className="flex w-full " >
