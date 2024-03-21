@@ -34,7 +34,8 @@ export default function Home() {
 
   async function fetchData(cityName) {
     try {
-      const res = await fetch(`http://localhost:3000/api/weather?address=${cityName}`, {
+      // const res = await fetch(`http://localhost:3000/api/weather?address=${cityName}`, {
+      const res = await fetch(`/api/weather?address=${cityName}`, {
         cache: "no-store",
       });
       // if(!res.ok){
@@ -52,7 +53,8 @@ export default function Home() {
 
   async function fetchDataByCoordinates(latitude,longitude) {
     try {
-      const res = await fetch(`http://localhost:3000/api/weather?lat=${latitude}&lon=${longitude}`, {
+      // const res = await fetch(`http://localhost:3000/api/weather?lat=${latitude}&lon=${longitude}`, {
+      const res = await fetch(`/api/weather?lat=${latitude}&lon=${longitude}`, {
         cache: "no-store",
       });
       const jsonData = (await res.json()).data;
